@@ -1,0 +1,11 @@
+author: Minloha
+name: Hamino
+version: 1.0.0
+main: cn.minloha.Main
+website: https://www.minloha.cn
+description: This is a depend machine learning algorithm plugin of minecraft servers,Server admin can use this plugin to train some model,and prevent hacker attacks
+
+commands:
+  hamino:
+    description: Hamino神经网络反作弊核心指令
+    permission: hamino.admin

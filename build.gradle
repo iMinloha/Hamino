@@ -1,0 +1,40 @@
+plugins {
+    id 'java'
+}
+
+group 'cn.minloha'
+version '1.0-SNAPSHOT'
+
+def targetJavaVersion = 8
+
+repositories {
+    mavenCentral()
+    maven {
+        name = 'papermc-repo'
+        url = 'https://repo.papermc.io/repository/maven-public/'
+    }
+    maven {
+        name = 'sonatype'
+        url = 'https://oss.sonatype.org/content/groups/public/'
+    }
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.0'
+    compileOnly 'com.destroystokyo.paper:paper-api:1.12-R0.1-SNAPSHOT'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+jar {
+    archiveFileName = 'Hamino.jar'
+    manifest {
+        attributes 'Main-Class': 'cn.minloha.Main'
+    }
+    tasks.withType(Jar) {
+        destinationDir = file("$rootDir/paper/plugins")
+    }
+}
