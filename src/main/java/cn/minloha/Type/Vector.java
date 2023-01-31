@@ -67,6 +67,15 @@ public class Vector {
         return new Vector(this.saveVector);
     }
 
+    public static Vector setOne(int index,int length){
+        List<Double> f = new ArrayList<>();
+        for(int m = 0;m<length;m++){
+            if(m == index) f.add(1.0);
+            else f.add(0.0);
+        }
+        return new Vector(f);
+    }
+
 
     public static Double Multiplicate(Vector v1,Vector v2) {
         double Mul = 0.0;

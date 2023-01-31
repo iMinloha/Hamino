@@ -1,6 +1,7 @@
 package cn.minloha;
 
 import cn.minloha.GetCommander.Train;
+import cn.minloha.GetEvent.MonitorEvent;
 import cn.minloha.GetEvent.PVPEvent;
 import cn.minloha.Type.PIPE;
 import org.bukkit.Bukkit;
@@ -25,8 +26,9 @@ public class Main extends JavaPlugin implements Listener{
     public void onEnable(){
         saveDefaultConfig();
         this.getLogger().info("Load all algorithm");
-        // 注册事件
+        // 注册击打事件
         Bukkit.getPluginManager().registerEvents(new PVPEvent(), this);
+        Bukkit.getPluginManager().registerEvents(new MonitorEvent(), this);
         getCommand("hamino").setExecutor(new Train());
         reloadConfig();
         this.getLogger().info("Load configuration");

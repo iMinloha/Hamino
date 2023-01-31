@@ -4,11 +4,7 @@
 
 如果你需要详细的解释，可以访问我的博客学习更详细的内容：[点击我进行跳转](https://blog.minloha.cn/2023/01/04/%E9%9D%9E%E5%B8%B8%E8%AF%A6%E7%BB%86%E7%9A%84ANN/)
 
-如果觉得代码不错可以为我点亮star，也可以关注我的博客[https://blog.minloha.cn](https://blog.minloha.cn)
-
-目前我的博客正在更新Linux内核源码阅读，有感兴趣的可以看看哦
-
-下载可以直接点击项目文件里的Hamino.jar
+如果觉得代码不错可以为我点亮star，也可以关注我的博客https://blog.minloha.cn，这样我有什么新的项目就可以看到了！
 
 ## 项目结构
 

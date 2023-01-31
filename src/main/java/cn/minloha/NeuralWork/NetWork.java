@@ -91,7 +91,7 @@ public class NetWork {
         for(Linear l : this.net){
             in = l.forward(in);
         }
-        System.out.println("[Hamino]:train output " + in);
+        System.out.println("[Hamino]:output is " + in);
         this.nabla_outer = Vector.add(in,Vector.Multiplicate(-1,except));
         return itemFunction.CovLoss(except,in);
     }
@@ -126,7 +126,7 @@ public class NetWork {
 
     public void loadModel(String modelPath) throws IOException {
         ModelLoad modelLoad = new ANNmodel(new ArrayList<>());
-        modelLoad.LoadingInFile(modelPath);List<Neural> ln = new ArrayList<>();
+        modelLoad.LoadingInFile(modelPath); List<Neural> ln = new ArrayList<>();
         List<DataClass> params = (List<DataClass>) modelLoad.getParams();
         for(DataClass dc : params) ln.add(new Neural(dc,this.lita));int times = 0;
         for(Linear l : net)

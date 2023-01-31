@@ -75,35 +75,7 @@ public class PVPEvent implements Listener {
                 if(kick % 10 == 0) net.saveModel(filepath);
                 kick++;
             }
-        } else if (event.getEntity().getType() == EntityType.PLAYER &&
-                event.getDamager().getType() == EntityType.PLAYER){
-            // 玩家和玩家PVP
-            Player p1 = (Player) event.getEntity();  // M
-            Player p2 = (Player) event.getDamager(); // S
-
-            Location p1_lo = p1.getLocation();
-            Location p2_lo = p2.getLocation();
-
-            List<Double> re = new ArrayList<>();
-
-            Location a_lo = p2.getTargetBlock((Set<Material>) null, 10).getLocation();
-
-            re.add(p1_lo.getX() - p2_lo.getX());
-            re.add(a_lo.getX() / 10);
-            re.add(p1_lo.getY() - p2_lo.getY());
-            re.add(a_lo.getY() / 10);
-            re.add(p1_lo.getZ() - p2_lo.getZ());
-            re.add(a_lo.getZ() / 10);
-
-            List<Double> belief = net.forward(new Vector(re)).getAsList();
-
-            int index = 0;double temp = 0.0;
-            for(int m = 0;m<belief.size();m++){
-                if(belief.get(m)>temp) {temp = belief.get(m);index=m;}
-            }
-            p2.sendMessage(ChatColor.RED + "[Hamino]:you are " + config.getList("categories").get(index).toString() + ",Similarity:" + belief.get(index));
         }
-
     }
 
     private void addData(Double s) throws IOException {
