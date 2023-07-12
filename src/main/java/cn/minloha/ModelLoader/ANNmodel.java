@@ -1,7 +1,6 @@
 package cn.minloha.ModelLoader;
 
 import cn.minloha.NeuralWork.DataClass;
-import cn.minloha.Type.Matrix;
 import cn.minloha.Type.Vector;
 import org.junit.Test;
 
@@ -50,7 +49,6 @@ public class ANNmodel implements ModelLoad{
             }
             bufferedReader.close();
         }
-        // 清理垃圾
         System.gc();
     }
 

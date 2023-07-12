@@ -6,7 +6,7 @@
 # ============================================
 
 # 置信值,值为经过激活后的值,可以根据训练的输出来选择
-confidence: 0.9
+confidence: 0.66
 
 # Java没有办法调用显卡计算，所以模型训练需要使用CPU进行，训练请使用CPU性能好的机器训练。
 # 之后会甩出几个API接口，大家可以尝试使用python-tensorflow训练.
@@ -20,12 +20,7 @@ categories:
   - "killaura"
   - "reach"
 
-# 模型文件名务必与分类名严格一致(包括次序)，这样代码就能少些两句了
-# 模型保存在${server}/plugins/config/hamino下
+# 模型文件名将作为训练指令的一部分，即/hamino train [categories] [models]
 # models:
-#   - "/normal.data"
-#   - "/normal.data"
-models:
-  - "normal.data"
-  - "normal.data"
-  - "reach.data"
+#   - "v1.data"
+models: "v1.data"

@@ -10,8 +10,6 @@ import org.bukkit.entity.Zombie;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import java.lang.reflect.Field;
-import java.lang.reflect.Method;
 import java.util.List;
 
 public class Main extends JavaPlugin implements Listener{

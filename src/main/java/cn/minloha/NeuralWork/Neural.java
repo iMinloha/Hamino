@@ -1,10 +1,8 @@
 package cn.minloha.NeuralWork;
 
-import cn.minloha.Type.Matrix;
 import cn.minloha.Type.Vector;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 // 神经节点对象

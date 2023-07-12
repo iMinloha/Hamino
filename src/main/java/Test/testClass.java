@@ -1,13 +1,9 @@
 package Test;
 
-import cn.minloha.ModelLoader.ANNmodel;
-import cn.minloha.ModelLoader.ModelLoad;
 import cn.minloha.NeuralWork.NetWork;
-import cn.minloha.Type.Vector;
 import org.junit.Test;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 public class testClass {
     @Test

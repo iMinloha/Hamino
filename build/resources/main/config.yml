@@ -1,22 +1,26 @@
 # Hamino配置文件
+# ============================================
+# 这里需要注意！
+#   |- 神经网络的结构为：6,11,9,8,6,4,3，所以只能区分3种情况
+#   |- 默认的模型与名词必须放在第一位!
+# ============================================
+
+# 置信值,值为经过激活后的值,可以根据训练的输出来选择
+confidence: 0.9
+
 # Java没有办法调用显卡计算，所以模型训练需要使用CPU进行，训练请使用CPU性能好的机器训练。
 # 之后会甩出几个API接口，大家可以尝试使用python-tensorflow训练.
 # 模型格式见文档，输出请不要使用二进制(Java没有)
 # 分类名就是外挂类型,最后会根据文件名进行提示作弊和封禁
 # categories:
-#  - "Killaura"
-#  - "Reach"
+#  - "normal"
+#  - "killaura"
 categories:
   - "normal"
   - "killaura"
   - "reach"
 
-# 模型文件名务必与分类名严格一致(包括次序)，这样代码就能少些两句了
-# 模型保存在${server}/plugins/config/hamino下
+# 模型文件名将作为训练指令的一部分，即/hamino train [categories] [models]
 # models:
-#   - "/Killaura.data"
-#   - "/Reach.data"
-models:
-  - "normal.data"
-  - "killaura.data"
-  - "reach.data"
+#   - "v1.data"
+models: "v1.data"

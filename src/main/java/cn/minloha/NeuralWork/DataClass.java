@@ -1,9 +1,6 @@
 package cn.minloha.NeuralWork;
 
-import cn.minloha.Type.Matrix;
 import cn.minloha.Type.Vector;
-
-import java.text.DecimalFormat;
 
 public class DataClass {
 

@@ -5,7 +5,6 @@ import cn.minloha.NeuralWork.NetWork;
 import cn.minloha.Type.PIPE;
 import cn.minloha.Type.Vector;
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -25,11 +24,13 @@ public class PVPEvent implements Listener {
     NetWork net = new NetWork(6,11,9,8,6,4,3);
 
     private PIPE pipe = PIPE.getInstance();
+
+    private int kick_time = 0;
     private boolean one = true;
 
     @EventHandler
     public void DamageTarget(EntityDamageByEntityEvent event) throws IOException {
-        FileConfiguration config = Main.getPlugin(Main.class).getConfig();
+        FileConfiguration config = Main.getPlugin(Main.class).getConfig();kick_time ++;
         String filepath = Main.getPlugin(Main.class).getDataFolder().getAbsolutePath() + "\\";
 
         if(event.getEntity().getName().contains("Target") &&
@@ -38,7 +39,6 @@ public class PVPEvent implements Listener {
             if(event.getDamager().getType() == EntityType.PLAYER) {
                 Player player = (Player) event.getDamager();
                 Entity monster = event.getEntity();
-                int kick = 0;
                 // test status PVP
                 Location m_location = event.getEntity().getLocation();
                 Location p_location = player.getLocation();
@@ -61,28 +61,17 @@ public class PVPEvent implements Listener {
                 }
                 Vector except = new Vector(e);
 
-                List<String> modelList = (List<String>) config.getList("models"); int index = 0;
-                for(String o : modelList){
-                    if(except.getAsList().get(index) == 1) { filepath += o;break; }
-                    index++;
-                }
+                filepath += config.getString("models");
+
                 if(new File(filepath).exists() && one){net.loadModel(filepath); one = false;}
 
-                double accessy = 1-net.forward(new Vector(differ), except);
+                double accessy = 1 - net.forward(new Vector(differ), except);
                 Player admin = Bukkit.getPlayer(pipe.getPipe().get(0));
                 admin.sendMessage("{" + monster.getName() + "-> " + player.getName() + "} accuracy:" + accessy);
                 net.backward();
-                if(kick % 10 == 0) net.saveModel(filepath);
-                kick++;
+                if(kick_time % 10 == 0) net.saveModel(filepath);
             }
         }
     }
 
-    private void addData(Double s) throws IOException {
-        String filepath = "C:\\Users\\28211\\Desktop\\re.txt";
-        BufferedWriter bufferedWriter = new BufferedWriter((new OutputStreamWriter(new FileOutputStream(filepath, true))));
-        bufferedWriter.write(String.valueOf(s));
-        bufferedWriter.write("\n");
-        bufferedWriter.close();
-    }
 }

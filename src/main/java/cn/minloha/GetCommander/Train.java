@@ -2,7 +2,6 @@ package cn.minloha.GetCommander;
 
 import cn.minloha.Main;
 import cn.minloha.Type.PIPE;
-import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
@@ -30,11 +29,11 @@ public class Train implements CommandExecutor{
 
     public void sendHelpList(Player player){
         player.sendMessage(ChatColor.AQUA + "----------->[" + ChatColor.RED + "Hamino" + ChatColor.AQUA + "]<-----------");
-        player.sendMessage("\tHamino is a PVP anti cheating using computational neural network. You can use relevant instructions to train your model!");
-        player.sendMessage("parameter list:");
-        player.sendMessage("\t help : get help");
-        player.sendMessage("\t train : training parameters");
-        player.sendMessage("\t test : test model");
+        player.sendMessage("Hamino is a PVP anti cheating using computational neural network. You can use relevant instructions to train your model!");
+        player.sendMessage("[*]parameter list:");
+        player.sendMessage("[1] help : get help");
+        player.sendMessage("[2] train : training parameters");
+        player.sendMessage("[3] test : test model");
     }
 
     public void sendTrainHelp(Player player){
@@ -88,9 +87,9 @@ public class Train implements CommandExecutor{
 
     public void alertStart(Player player){
         player.sendMessage(ChatColor.AQUA + "----------->[" + ChatColor.RED + "Hamino" + ChatColor.AQUA + "]<-----------");
-        player.sendMessage("\tHamino is a PVP anti cheating using computational neural network. You can use relevant instructions to train your model!");
+        player.sendMessage("Hamino is a PVP anti cheating using computational neural network. You can use relevant instructions to train your model!");
         player.sendMessage("parameter list:");
-        player.sendMessage("\t start categories(only one category): Training according to the grouping of configuration files");
+        player.sendMessage("start categories(only one category): Training according to the grouping of configuration files");
     }
 
     @Override
@@ -129,5 +128,4 @@ public class Train implements CommandExecutor{
         }
         return false;
     }
-
 }

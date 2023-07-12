@@ -1,6 +1,24 @@
 [
   {
+    "uuid": "b8267519-6e3a-36cc-923c-c6c073156dd3",
+    "name": "Sunruya",
+    "level": 4,
+    "bypassesPlayerLimit": false
+  },
+  {
+    "uuid": "1c64fe17-1dd1-3a9f-8859-ad93485b3681",
+    "name": "Suunruya",
+    "level": 4,
+    "bypassesPlayerLimit": false
+  },
+  {
     "uuid": "79629e2c-e00a-47df-a1af-13904ad560ca",
+    "name": "Minloha",
+    "level": 4,
+    "bypassesPlayerLimit": false
+  },
+  {
+    "uuid": "1621b6da-d507-33b5-bed5-72d7b8917471",
     "name": "Minloha",
     "level": 4,
     "bypassesPlayerLimit": false

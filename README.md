@@ -146,9 +146,7 @@ categories:
 #   - "/Killaura.data"
 #   - "/Reach.data"
 models:
-  - "normal.data"
-  - "killaura.data"
-  - "reach.data"
+  - "v1.data"
 ```
 
 加载对应类别的配置文件的时候，一定要让文件名和分类名一一对应，包括顺序，这样可以让我少写一些代码了，有需要也可以自己加点啥。
